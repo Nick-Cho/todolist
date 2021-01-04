@@ -9,23 +9,26 @@ export class TodoItem extends Component {
       margin: '5px',
       marginLeft: '525px',
       textDecoration: this.props.todo.completed ? 'line-through': 'none',
-      width: '800px'
-    }
-  }
+      width: '800px',
+    };
+  };
   render() {
+    const {id, title} = this.props.todo;
     return (
       <div style = {this.isCompleted()}> 
         <p>
-          <input type = "checkbox" onChange = {this.markCompleted}/> {' '}
-          {this.props.todo.title}
+          <input type = "checkbox" onChange = {this.props.markCompleted.bind(this.props, id)}/> 
+          {" "}
+          {title}
         </p>
       </div>
-    )
+    );
   }
 }
 
 //Prop Types
 TodoItem.propTypes = {
-  todos: PropTypes.object.isRequired
+  todos: PropTypes.object.isRequired,
+  markCompleted: PropTypes.func.isRequired
 }
 export default TodoItem
