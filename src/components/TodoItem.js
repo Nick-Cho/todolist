@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types';
-/*import Delete from './img/delete.png'
-import DeleteHover from './img/deleteHover.png'*/
+import Delete from './img/delete.png'
+import DeleteHover from './img/deleteHover.png'
 
 export class TodoItem extends Component {
   isCompleted = () => {
@@ -14,6 +14,7 @@ export class TodoItem extends Component {
       marginLeft: '325px',
       textDecoration: this.props.todo.completed ? 'line-through': 'none',
       width: '750px',
+      position: 'relative',
     };
   };
   render() {
@@ -24,8 +25,9 @@ export class TodoItem extends Component {
           <p>
             <input type = "checkbox" onChange = {this.props.markCompleted.bind(this.props, id)}/> 
             {" "}
-            {title} 
-            <button onClick = {this.props.delTodo.bind(this, id)} style = {btnStyle}>x</button>
+            {title}, 
+            <img  src = {Delete} className = "trash" alt = 'Delete'/>
+            <img src = {DeleteHover} className = "trashHover" alt = 'Delete' onClick = {this.props.delTodo.bind(this, id)}/>
         </p>
       </span>
       </div>
@@ -38,29 +40,6 @@ TodoItem.propTypes = {
   todos: PropTypes.object.isRequired,
   markCompleted: PropTypes.func.isRequired
 }
-
-const btnStyle = {
-  background: 'red',
-  color: 'white',
-  border: 'none',
-  padding: '5px 10px',
-  borderRadius: '50%',
-  cursor: 'pointer',
-  float: 'right'
-}
-/*const imgStyle = {
-  width: '13px',
-  maxWidth: '100%',
-  cursor: 'pointer',
-  hover: '' ,
-  float: 'right',
-  display: 'inline-block',
-  "&:hover":{
-    opacity: '0',
-    float: 'left'
-  }
-}*/
-
 
 
 export default TodoItem

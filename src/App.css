@@ -1,3 +1,4 @@
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -31,4 +32,33 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+.trash{
+  position: absolute;
+  width: 15px;
+  cursor: pointer;
+  right: 20px;
+  bottom: 20px;
+}
+
+.trash:hover{
+  opacity: 0;
+  z-index: -1;
+}
+
+.trashHover{
+  position: absolute;
+  right: 20px;
+  width: 15px;
+  cursor: pointer;
+  float: right;
+  opacity: 0;
+  bottom: 20px;
+}
+
+.trashHover:hover{
+  opacity: 100;
+  z-index: 1;
 }
