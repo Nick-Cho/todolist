@@ -2,6 +2,7 @@ import './App.css';
 import React, {Component} from 'react';
 import Todos from './components/Todos';
 import Header from './components/layout/Header'
+import AddTodo from './components/AddTodo'
 class App extends Component {
   //Dummy Todo's for debugging
     state = {
@@ -37,12 +38,22 @@ class App extends Component {
     this.setState({todos: [...this.state.todos.filter(todo => todo.id !== id)]});
   }
 
+  // Add todo
+  addTodo = (title) => {
+    const newTodo = {
+      id: 3,
+      title: title,
+      completed: false,
+    }
+    this.setState({todos:[...this.state.todos, newTodo]})
+  }
+
   render(){
     return (
       <div className = "App">
         <Header/>
-        <AddTodo/>
         <Todos todos={this.state.todos} delTodo = {this.delTodo} markCompleted = {this.markCompleted} />
+        <AddTodo addTodo = {this.addTodo}/>
       </div>
     );
   } 

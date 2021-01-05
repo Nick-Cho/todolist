@@ -1,4 +1,8 @@
 
+.App{
+  background-color:  #002233;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -61,4 +65,23 @@
 .trashHover:hover{
   opacity: 100;
   z-index: 1;
+}
+
+.btn{
+  display: inline-block;
+  border: none;
+  background: #555;
+  color: #fff;
+  padding: 7px 20px;
+  cursor: pointer;
+}
+
+.addTodo{
+  border: none;
+  border-radius: 50%;
+  padding: 5px 9px;
+  float: right;
+  background: #00b3b3;
+  color: white;
+  cursor: pointer;
 }
