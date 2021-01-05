@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 export class AddTodo extends Component {
   state = {
-    title : ''
+    title : '',
+    isDisplay: 'none'
   }
 
   onChange = (e) => this.setState({[e.target.name]: e.target.value});
@@ -10,11 +11,17 @@ export class AddTodo extends Component {
     e.preventDefault();
     this.props.addTodo(this.state.title);
     this.setState({title: ''});
+    this.setState({isDisplay: 'none'})
   }
+
+  addTodo = (e) => {
+    this.setState({isDisplay: 'flex'})
+  }
+
   render() {
     return (
-      <div>
-        <form onSubmit = {this.onSubmit} style = {{display: 'flex', width: '770px', padding: '0 36.4rem'}}>
+      <div style = {{width: '84rem'}}>
+        <form onSubmit = {this.onSubmit} style = {{display: this.state.isDisplay, width: '770px', padding: '0 36.4rem'}}>
           <input 
           type = "text" 
           name = "title" 
@@ -30,10 +37,15 @@ export class AddTodo extends Component {
           className = "btn" 
           style = {{flex: '1'}}/>
         </form>
+        <button className = "addTodo" onClick = {this.addTodo}> 
+          + 
+        </button>
+        
       </div>
     )
   }
 }
+
 
 
 export default AddTodo
