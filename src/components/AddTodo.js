@@ -37,6 +37,9 @@ export class AddTodo extends Component {
           className = "btn" 
           style = {{flex: '1'}}/>
         </form>
+        <div style = {{height: '10px'}}> 
+        </div>
+
         <button className = "addTodo" onClick = {this.addTodo}> 
           + 
         </button>
