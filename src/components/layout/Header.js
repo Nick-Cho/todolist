@@ -10,6 +10,8 @@ function Header() {
 
 const headerStyle = {
   textAlign: 'center',
+  backgroundColor: '#002233',
+  color: 'white',
 }
 
 export default Header
