@@ -11,7 +11,7 @@ export class TodoItem extends Component {
       paddingLeft: '10px',
       paddingRight: '10px',
       margin: '5px',
-      marginLeft: '325px',
+      left: '30%',
       textDecoration: this.props.todo.completed ? 'line-through': 'none',
       width: '750px',
       position: 'relative',
