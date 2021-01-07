@@ -6,6 +6,7 @@ import DeleteHover from './img/deleteHover.png'
 export class TodoItem extends Component {
   isCompleted = () => {
     return {
+      background: 'white',
       boxSizing: 'borderBox',
       border: '0.5px #d3d3d3 solid', 
       paddingLeft: '10px',
@@ -15,6 +16,7 @@ export class TodoItem extends Component {
       textDecoration: this.props.todo.completed ? 'line-through': 'none',
       width: '750px',
       position: 'relative',
+      color: this.props.todo.completed ? '#cdcdcd' : 'black',
     };
   };
   render() {
@@ -25,7 +27,7 @@ export class TodoItem extends Component {
           <p>
             <input type = "checkbox" onChange = {this.props.markCompleted.bind(this.props, id)}/> 
             {" "}
-            {title}, 
+            {title} 
             <img  src = {Delete} className = "trash" alt = 'Delete'/>
             <img src = {DeleteHover} className = "trashHover" alt = 'Delete' onClick = {this.props.delTodo.bind(this, id)}/>
         </p>
