@@ -1,9 +1,13 @@
 import React, { Component } from 'react'
 export class AddTodo extends Component {
-  state = {
-    title : '',
-    isDisplay: 'none'
+  constructor(){
+    super()
+    this.state = {
+      title : '',
+      isDisplay: 'none'
+    }
   }
+  
 
   onChange = (e) => this.setState({[e.target.name]: e.target.value});
 
