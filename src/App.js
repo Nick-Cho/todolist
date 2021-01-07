@@ -6,9 +6,13 @@ import AddTodo from './components/AddTodo'
 
 class App extends Component {
   //Dummy Todo's for debugging
-    state = {
+  constructor(){
+    super()
+    this.state = {
       todos: []
     }
+  }
+    
     
 // Toggling Completed Todos
   markCompleted =id =>{
